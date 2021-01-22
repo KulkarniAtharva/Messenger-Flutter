@@ -18,10 +18,6 @@ My Messenger series
    Part 7 - [One-PC-Facebook  using C++ & File Handling]()  <BR><BR><BR>
    <H3> <div align="center">Part 1 - Flutter App</div>       </H3>   <BR><BR><BR>
 </B>
-
-        <BR><BR><BR>
-      
-</B>
   
   
 
