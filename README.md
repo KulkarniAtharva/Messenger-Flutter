@@ -6,7 +6,6 @@
 &nbsp; 
 &nbsp;
 
-<BR><BR>
    
 My Messenger series   
 
