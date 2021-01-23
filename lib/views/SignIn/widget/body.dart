@@ -16,6 +16,8 @@ class Body extends StatelessWidget
   TextEditingController emailController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
 
+  String error = '';
+
   AuthService _authService = AuthService();
 
   /*const Body({
@@ -56,21 +58,38 @@ class Body extends StatelessWidget
             ),
             RoundedButton(
               text: "LOGIN",
-              press: ()
+              press: () async
               {
                 print('${emailController.text}');
 
-               _authService.signInWithEmailAndPassword('${emailController.text}','${passwordController.text}');
+               await _authService.signInWithEmailAndPassword('${emailController.text}','${passwordController.text}').then((result)
+               {
+                 if (result == null)
+                 {
+                  /* setState(()
+                   {
+                     error = "please supply a valid email";
+                    // _loading = false;
+                   });*/
+                 }
+                 else
+                 {
+                   print('signInWithGoogle succeeded: $result');
 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context)
-                    {
-                      return Home();
-                    },
-                  ),
-                );
+                   //Constants.saveUserLoggedInSharedPreference(true);
+                   //Constants.saveUserNameSharedPreference(userInfoSnapshot.docs[0].data()["userName"]);
+                  // Constants.saveUserAvatarSharedPreference(userInfoSnapshot.docs[0].data()["avatarUrl"]);
+                  // Constants.saveUserEmailSharedPreference(emailController.text);
+                   Navigator.push(
+
+
+
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => Home()));
+                 }
+               }
+               );
               },
             ),
             SizedBox(height: size.height * 0.03),
