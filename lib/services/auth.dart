@@ -9,8 +9,8 @@ class AuthService
     try
     {
       UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: "barry.allen@example.com",
-          password: "SuperSecretPassword!"
+          email: "atharvakulkarni2204@gmail.com",
+          password: "123456"
       );
     }
     on FirebaseAuthException catch (e)
