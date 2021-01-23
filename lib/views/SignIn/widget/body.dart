@@ -12,6 +12,7 @@ import 'package:messenger_flutter/views/home.dart';
 
 class Body extends StatelessWidget
 {
+
   TextEditingController emailController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
 
@@ -59,7 +60,7 @@ class Body extends StatelessWidget
               {
                 print('${emailController.text}');
 
-                _authService.signInWithEmailAndPassword('${emailController.text}','${passwordController.text}');
+               _authService.signInWithEmailAndPassword('${emailController.text}','${passwordController.text}');
 
                 Navigator.push(
                   context,
@@ -77,6 +78,7 @@ class Body extends StatelessWidget
               press: ()
               {
                 Navigator.push(
+
                   context,
                   MaterialPageRoute(
                     builder: (context)
