@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:messenger_flutter/views/chat_screen.dart';
 import 'package:quiver/time.dart';
 
 const double chatBarMargin = 4;
@@ -152,7 +153,9 @@ class _ChatBarState extends State<ChatBar> with TickerProviderStateMixin
             cursorColor: Colors.white,
             onFieldSubmitted: (s)
             {
-              print(s);
+
+
+              //print(s);
               _messageController.clear();
             },
             decoration: InputDecoration(
@@ -241,7 +244,13 @@ class _ChatBarState extends State<ChatBar> with TickerProviderStateMixin
   {
     if (_messageController.text != null)
     {
-      print(_messageController.text);
+      print(_messageController.text+"dff");
+
+      ChattingTile(
+        isByMe: true,
+        message: _messageController.text,
+      );
+
       _messageController.clear();
     }
   }

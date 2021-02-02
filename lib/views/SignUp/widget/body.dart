@@ -9,9 +9,11 @@ import 'package:messenger_flutter/views/SignUp/widget/background.dart';
 import 'package:messenger_flutter/views/SignUp/widget/or_divider.dart';
 import 'package:messenger_flutter/views/SignUp/widget/social_icon.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatelessWidget
+{
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:messenger_flutter/data/constants.dart';
 
-class TextFieldContainer extends StatelessWidget {
+class TextFieldContainer extends StatelessWidget
+{
   final Widget child;
-  const TextFieldContainer({
+  const TextFieldContainer(
+  {
     Key key,
     this.child,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context)  {
+  Widget build(BuildContext context)
+  {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),

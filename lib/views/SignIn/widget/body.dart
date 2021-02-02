@@ -81,9 +81,6 @@ class Body extends StatelessWidget
                   // Constants.saveUserAvatarSharedPreference(userInfoSnapshot.docs[0].data()["avatarUrl"]);
                   // Constants.saveUserEmailSharedPreference(emailController.text);
                    Navigator.push(
-
-
-
                        context,
                        MaterialPageRoute(
                            builder: (context) => Home()));

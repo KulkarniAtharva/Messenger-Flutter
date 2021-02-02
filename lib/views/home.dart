@@ -110,8 +110,7 @@ class _MyHomePageState extends State<Home>
                             imgUrl: chats[index].imgUrl,
                             name: chats[index].name,
                             lastMessage: chats[index].lastMessage,
-                            haveunreadmessages:
-                            chats[index].haveunreadmessages,
+                            haveunreadmessages: chats[index].haveunreadmessages,
                             unreadmessages: chats[index].unreadmessages,
                             lastSeenTime: chats[index].lastSeenTime,
                           );

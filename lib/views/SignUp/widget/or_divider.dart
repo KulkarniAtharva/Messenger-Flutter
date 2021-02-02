@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:messenger_flutter/data/constants.dart';
 
-class OrDivider extends StatelessWidget {
+class OrDivider extends StatelessWidget
+{
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.symmetric(vertical: size.height * 0.02),
@@ -27,7 +29,8 @@ class OrDivider extends StatelessWidget {
     );
   }
 
-  Expanded buildDivider() {
+  Expanded buildDivider()
+  {
     return Expanded(
       child: Divider(
         color: Color(0xFFD9D9D9),

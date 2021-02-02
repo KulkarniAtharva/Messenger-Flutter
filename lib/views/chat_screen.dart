@@ -174,6 +174,8 @@ class ChattingTile extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
+    print(message+" ask");
+
     return Container(
       margin: EdgeInsets.only(bottom: 24),
       alignment: isByMe ? Alignment.centerRight : Alignment.centerLeft,
