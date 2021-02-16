@@ -155,7 +155,7 @@ class _ChatBarState extends State<ChatBar> with TickerProviderStateMixin
             {
 
 
-              //print(s);
+              print(s);
               _messageController.clear();
             },
             decoration: InputDecoration(
@@ -246,10 +246,18 @@ class _ChatBarState extends State<ChatBar> with TickerProviderStateMixin
     {
       print(_messageController.text+"dff");
 
-      ChattingTile(
-        isByMe: true,
-        message: _messageController.text,
-      );
+      Container(
+          padding: EdgeInsets.symmetric(horizontal: 24),
+          child: ListView.builder(
+          itemCount: 1,
+          shrinkWrap: true,
+          itemBuilder: (context, index)
+          {
+            return ChattingTile(
+              isByMe: true,
+              message: _messageController.text,
+            );
+          }));
 
       _messageController.clear();
     }
