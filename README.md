@@ -76,7 +76,7 @@ and much more too come.....
 >
 > - [PayPal](https://paypal.me/iamsanskartiwari)
 
-Recommend/Endorse me on [LinkedIn](https://www.linkedin.com/in/lamsanskar/)
+Recommend/Endorse me on [LinkedIn](https://www.linkedin.com/in/atharvakulkarni2204/)
 
 ### License
 
