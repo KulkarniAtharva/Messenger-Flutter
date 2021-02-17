@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:messenger_flutter/data/constants.dart';
 import 'package:messenger_flutter/models/user_is_model.dart';
 
 class AuthService
