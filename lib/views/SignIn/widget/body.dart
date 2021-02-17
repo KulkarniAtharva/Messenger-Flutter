@@ -12,7 +12,6 @@ import 'package:messenger_flutter/views/home.dart';
 
 class Body extends StatelessWidget
 {
-
   TextEditingController emailController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
 

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:messenger_flutter/chat_bar.dart';
-import 'file:///D:/Downloads/messenger_flutter/lib/data/data.dart';
-import 'file:///D:/Downloads/messenger_flutter/lib/models/message_model.dart';
+import 'package:messenger_flutter/data/data.dart';
+import 'package:messenger_flutter/models/message_model.dart';
+
 
 class ChatScreen extends StatefulWidget
 {
@@ -20,7 +21,7 @@ class _ChatScreenState extends State<ChatScreen>
   void initState()
   {
    // super.initState();
-    messages = getMessages();
+   // messages = getMessages();
     myFocusNode = FocusNode();
   }
 

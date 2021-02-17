@@ -7,6 +7,7 @@ import 'package:quiver/time.dart';
 
 const double chatBarMargin = 4;
 const double chatBarRadius = 12;
+final _firestore = Firestore.instance;
 
 class ChatBarItem
 {
@@ -246,18 +247,12 @@ class _ChatBarState extends State<ChatBar> with TickerProviderStateMixin
     {
       print(_messageController.text+"dff");
 
-      Container(
-          padding: EdgeInsets.symmetric(horizontal: 24),
-          child: ListView.builder(
-          itemCount: 1,
-          shrinkWrap: true,
-          itemBuilder: (context, index)
-          {
-            return ChattingTile(
-              isByMe: true,
-              message: _messageController.text,
-            );
-          }));
+      _firestore.collection('messages').add({
+        'sender': username,
+        'text': messageText,
+        'timestamp':DateTime.now().millisecondsSinceEpoch,
+        'senderemail': email
+      });
 
       _messageController.clear();
     }
