@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:messenger_flutter/data/constants.dart';
 import 'package:messenger_flutter/models/user_is_model.dart';
+import 'package:messenger_flutter/views/home.dart';
 
 class AuthService
 {
@@ -58,7 +59,7 @@ class AuthService
       Constants.saveUserNameSharedPreference(userDetails.email.replaceAll("@gmail.com", "").toLowerCase());
       Constants.saveUserAvatarSharedPreference(userDetails.photoURL);
       Constants.saveUserEmailSharedPreference(userDetails.email);
-      Navigator.push(context, MaterialPageRoute(builder: (context) => WebHome()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
     }
 
     return userDetails;

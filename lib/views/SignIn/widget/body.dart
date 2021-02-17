@@ -5,6 +5,7 @@ import 'package:messenger_flutter/components/already_have_an_account_acheck.dart
 import 'package:messenger_flutter/components/rounded_button.dart';
 import 'package:messenger_flutter/components/rounded_input_field.dart';
 import 'package:messenger_flutter/components/rounded_password_field.dart';
+import 'package:messenger_flutter/data/constants.dart';
 import 'package:messenger_flutter/services/auth.dart';
 import 'package:messenger_flutter/views/SignIn/widget/background.dart';
 import 'package:messenger_flutter/views/SignUp/signup_screen.dart';
@@ -65,20 +66,20 @@ class Body extends StatelessWidget
                {
                  if (result == null)
                  {
-                  /* setState(()
+                   setState(()
                    {
                      error = "please supply a valid email";
                     // _loading = false;
-                   });*/
+                   });
                  }
                  else
                  {
                    print('signInWithGoogle succeeded: $result');
 
-                   //Constants.saveUserLoggedInSharedPreference(true);
-                   //Constants.saveUserNameSharedPreference(userInfoSnapshot.docs[0].data()["userName"]);
-                  // Constants.saveUserAvatarSharedPreference(userInfoSnapshot.docs[0].data()["avatarUrl"]);
-                  // Constants.saveUserEmailSharedPreference(emailController.text);
+                   Constants.saveUserLoggedInSharedPreference(true);
+                   Constants.saveUserNameSharedPreference(userInfoSnapshot.docs[0].data()["userName"]);
+                   Constants.saveUserAvatarSharedPreference(userInfoSnapshot.docs[0].data()["avatarUrl"]);
+                   Constants.saveUserEmailSharedPreference(emailController.text);
                    Navigator.push(
                        context,
                        MaterialPageRoute(
