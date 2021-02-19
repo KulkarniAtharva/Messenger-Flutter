@@ -1,13 +1,17 @@
 import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:messenger_flutter/services/database.dart';
 import 'package:messenger_flutter/views/chat_screen.dart';
 import 'package:quiver/time.dart';
 
 const double chatBarMargin = 4;
 const double chatBarRadius = 12;
-final _firestore = Firestore.instance;
+final FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+DatabaseMethods databaseMethods = DatabaseMethods();
 
 class ChatBarItem
 {
@@ -243,16 +247,35 @@ class _ChatBarState extends State<ChatBar> with TickerProviderStateMixin
 
   void _sendMessage()
   {
-    if (_messageController.text != null)
+    if(_messageController.text != null)
     {
       print(_messageController.text+"dff");
 
-      _firestore.collection('messages').add({
-        'sender': username,
-        'text': messageText,
-        'timestamp':DateTime.now().millisecondsSinceEpoch,
-        'senderemail': email
-      });
+     /* _firestore.collection('Atharva2204').doc('person').collection('Adwait7122').doc().set({
+        'from': 'Atharva2204',
+        'text':_messageController.text,
+        'time':DateTime.now().millisecondsSinceEpoch,
+        'date': DateTime.now().microsecondsSinceEpoch
+      });*/
+
+
+      /*firestore.collection("users").add(
+          {
+            "name" : "john",
+            "age" : 50,
+            "email" : "example@example.com",
+            "address" :
+            {
+              "street" : "street 24",
+              "city" : "new york"
+            }
+          }).
+      then((value)
+      {
+        print(value.id);
+      });*/
+
+      databaseMethods.addService();
 
       _messageController.clear();
     }

@@ -21,7 +21,7 @@ class _ChatScreenState extends State<ChatScreen>
   void initState()
   {
    // super.initState();
-   // messages = getMessages();
+    messages = getMessages();
     myFocusNode = FocusNode();
   }
 
@@ -203,4 +203,33 @@ class ChattingTile extends StatelessWidget
       ),
     );
   }
+}
+
+List<MessageModel> getMessages()
+{
+  List<MessageModel> messages = new List();
+  MessageModel messageModel = new MessageModel();
+
+//1
+  messageModel.isByme = true;
+  messageModel.message = "Thank you. Bye";
+  messages.add(messageModel);
+
+  messageModel = new MessageModel();
+
+//1
+  messageModel.isByme = false;
+  messageModel.message = "Hey Atharva, what's up?";
+  messages.add(messageModel);
+
+  messageModel = new MessageModel();
+
+//1
+  messageModel.isByme = true;
+  messageModel.message = "Oh hey there, I'm all good btw. How are you?";
+  messages.add(messageModel);
+
+  messageModel = new MessageModel();
+
+  return messages;
 }

@@ -1,3 +1,4 @@
+import 'package:edge_alert/edge_alert.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,6 +18,9 @@ class Body extends StatelessWidget
   TextEditingController passwordController = new TextEditingController();
 
   String error = '';
+  String email;
+  String password;
+  final auth = FirebaseAuth.instance;
 
   AuthService _authService = AuthService();
 
@@ -62,31 +66,86 @@ class Body extends StatelessWidget
               {
                 print('${emailController.text}');
 
-               await _authService.signInWithEmailAndPassword('${emailController.text}','${passwordController.text}').then((result)
+                email = emailController.text;
+                password = passwordController.text;
+
+               /* if(password != null && email != null)
+                {
+                 /* setState(()
+                  {
+                    loggingin = true;
+                  });*/
+                  try
+                  {
+                    //final loggedUser = await auth.signInWithEmailAndPassword(email: 'a@gmail.com', password: '111111');
+                    FirebaseUser user = await FirebaseAuth.instance
+                        .signInWithEmailAndPassword(email: 'a@gmail.com', password: '111111');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Home()));
+
+                    //if(loggedUser != null)
+                    {
+                      /*setState(()
+                      {
+                        loggingin = false;
+                      });*/
+                    /*  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Home()));*/
+                    }
+                  }
+                  catch (e)
+                  {
+                   /* setState(()
+                    {
+                      loggingin = false;
+                    });*/
+                    EdgeAlert.show(context,
+                        title: 'Login Failed',
+                        description: e.toString(),
+                        gravity: EdgeAlert.BOTTOM,
+                        icon: Icons.error,
+                        backgroundColor: Colors.deepPurple[900]);
+                  }
+                }
+                else
+                {
+                  EdgeAlert.show(context,
+                      title: 'Uh oh!',
+                      description:
+                      'Please enter the email and password.',
+                      gravity: EdgeAlert.BOTTOM,
+                      icon: Icons.error,
+                      backgroundColor: Colors.deepPurple[900]);
+                }*/
+
+               await _authService.signInWithEmailAndPassword('${emailController.text}','${passwordController.text}', context).then((result)
                {
-                 if (result == null)
-                 {
-                   setState(()
+                  if (result == null)
+                  {
+                    /* setState(()
                    {
                      error = "please supply a valid email";
                     // _loading = false;
-                   });
-                 }
-                 else
-                 {
-                   print('signInWithGoogle succeeded: $result');
+                   });*/
+                  }
+                  else
+                  {
+                    print('signIn succeeded: $result');
 
-                   Constants.saveUserLoggedInSharedPreference(true);
-                   Constants.saveUserNameSharedPreference(userInfoSnapshot.docs[0].data()["userName"]);
-                   Constants.saveUserAvatarSharedPreference(userInfoSnapshot.docs[0].data()["avatarUrl"]);
-                   Constants.saveUserEmailSharedPreference(emailController.text);
-                   Navigator.push(
-                       context,
-                       MaterialPageRoute(
-                           builder: (context) => Home()));
-                 }
-               }
-               );
+                    // Constants.saveUserLoggedInSharedPreference(true);
+                    // Constants.saveUserNameSharedPreference(userInfoSnapshot.docs[0].data()["userName"]);
+                    //Constants.saveUserAvatarSharedPreference(userInfoSnapshot.docs[0].data()["avatarUrl"]);
+                    //  Constants.saveUserEmailSharedPreference(emailController.text);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Home()));
+                  }
+                });
               },
             ),
             SizedBox(height: size.height * 0.03),
@@ -94,7 +153,6 @@ class Body extends StatelessWidget
               press: ()
               {
                 Navigator.push(
-
                   context,
                   MaterialPageRoute(
                     builder: (context)

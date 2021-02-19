@@ -37,6 +37,7 @@ dependencies:
   firebase_core: ^0.7.0
   google_sign_in: 4.4.3
   shared_preferences: ^0.5.12+4
+  edge_alert: ^0.0.1
 
 dev_dependencies:
   flutter_test:

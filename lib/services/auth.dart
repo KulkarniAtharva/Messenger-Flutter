@@ -1,3 +1,6 @@
+
+
+import 'package:edge_alert/edge_alert.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,11 +18,11 @@ class AuthService
     return user != null ? User1(uid: user.uid) : null;
   }
 
-  Future signInWithEmailAndPassword(String email, String password) async
+  Future signInWithEmailAndPassword(String email, String password, BuildContext context) async
   {
     try
     {
-      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: "atharvakulkarni2204@gmail.com", password: "123456");
+      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: "a@gmail.com", password: "111111");
       User user = userCredential.user;
       return _userFromFirebaseUser(user);
     }
@@ -27,11 +30,21 @@ class AuthService
     {
       if (e.code == 'user-not-found')
       {
-        print('No user found for that email.');
+        EdgeAlert.show(context,
+            title: 'No user found for that email.',
+            description: e.toString(),
+            gravity: EdgeAlert.BOTTOM,
+            icon: Icons.error,
+            backgroundColor: Colors.deepPurple[900]);
       }
       else if (e.code == 'wrong-password')
       {
-        print('Wrong password provided for that user.');
+        EdgeAlert.show(context,
+            title: 'Wrong password provided for that user.',
+            description: e.toString(),
+            gravity: EdgeAlert.BOTTOM,
+            icon: Icons.error,
+            backgroundColor: Colors.deepPurple[900]);
       }
     }
   }
@@ -66,7 +79,7 @@ class AuthService
   }
 
   // sign up with email and password
-  Future signUpWithEmailAndPassword(String email, String password) async
+  Future signUpWithEmailAndPassword(String email, String password, BuildContext context) async
   {
     try
     {
@@ -77,6 +90,14 @@ class AuthService
     catch (e)
     {
       print(e.toString());
+
+      EdgeAlert.show(context,
+          title: 'Wrong password provided for that user.',
+          description: e.toString(),
+          gravity: EdgeAlert.BOTTOM,
+          icon: Icons.error,
+          backgroundColor: Colors.deepPurple[900]);
+
       return null;
     }
   }

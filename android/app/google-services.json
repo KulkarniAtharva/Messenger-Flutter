@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "1071250796443-dn1fhl2fpl7nkv0chrtqga0fr6tqnjt3.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.theindianappguy.flutterchat",
-            "certificate_hash": "871f94251ccbb87e6b2cb9f2dad338fc2e74fba2"
-          }
-        },
-        {
           "client_id": "1071250796443-nvjibfdlfp6pcno1eakfhrs229vnd74u.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -45,20 +37,12 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1071250796443:android:dd0646bd230dc43945bb3e",
+        "mobilesdk_app_id": "1:1071250796443:android:a89ad1a5ac7d7ed045bb3e",
         "android_client_info": {
           "package_name": "dev.atharvakulkarni.messenger_flutter"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "1071250796443-vrm0ikjujdknrvli2ev0oap12md8errs.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "dev.atharvakulkarni.messenger_flutter",
-            "certificate_hash": "871f94251ccbb87e6b2cb9f2dad338fc2e74fba2"
-          }
-        },
         {
           "client_id": "1071250796443-nvjibfdlfp6pcno1eakfhrs229vnd74u.apps.googleusercontent.com",
           "client_type": 3
